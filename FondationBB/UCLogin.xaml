@@ -7,13 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="#FF21255B">
-        <Canvas Background="#FFDDE5F1" Margin="0,60,0,45">
-            <Image Height="269" Canvas.Left="10" Source="/img/5eeccd85-f09b-4b25-a5f1-b1fbeab1f248 1.png" Stretch="Fill" Canvas.Top="51" Width="356" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Canvas Background="#FFDDE5F1" Margin="0,60,0,60">
+            <Image Height="220" Canvas.Left="10" Source="/img/5eeccd85-f09b-4b25-a5f1-b1fbeab1f248 1.png" Stretch="Fill" Canvas.Top="55" Width="296" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </Canvas>
-        <Image Margin="23,6,730,400" Source="/img/image 11.png" Stretch="Fill"/>
-        <Canvas Background="White" Margin="460,80,60,69">
-            <Label Content="Connexion à votre espace" Canvas.Top="22" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bodoni MT" Height="68" Width="280" FontSize="24" Foreground="#FF242758" Canvas.Left="10"/>
-            <Label Content="Accès réservé aux bénévoles et aux responsables" Canvas.Left="39" Canvas.Top="56" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bodoni MT" FontSize="10" Foreground="#FF242758"/>
+        <Image Margin="33,6,0,0" Source="/img/image 11.png" Stretch="Fill" Width="50" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Canvas Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="294" Height="261" Margin="454,88,0,0">
+            <Label Content="Connexion à votre espace" Canvas.Top="11" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" Height="68" Width="280" FontSize="24" Foreground="#FF242758" Canvas.Left="15"/>
+            <Label Content="Accès réservé aux bénévoles et aux responsables" Canvas.Left="42" Canvas.Top="44" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" FontSize="10" Foreground="#FF242758"/>
+            <TextBox Canvas.Left="30" TextWrapping="Wrap" Text="" Canvas.Top="108" Width="219" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="15" TextChanged="TextBox_TextChanged" FontSize="10"/>
+            <TextBox Canvas.Left="30" TextWrapping="Wrap" Text="" Canvas.Top="154" Width="219" FontFamily="Cambria" FontSize="10" Height="14" TextChanged="TextBox_TextChanged" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button Content="Se connecter" Canvas.Left="30" Canvas.Top="193" Height="22" Width="219" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10" BorderBrush="#FFC5D9EA" Background="#FFC5D9EA"/>
+            <Label Content="Entrez votre identifiant" Canvas.Left="24" Canvas.Top="87" HorizontalAlignment="Center" Height="26" VerticalAlignment="Top" Width="136" FontSize="9"/>
+            <Label Content="Entrez votre mot de passe" Canvas.Left="25" Canvas.Top="135" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
 
     </Grid>

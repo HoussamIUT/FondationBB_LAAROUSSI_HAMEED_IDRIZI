@@ -19,6 +19,12 @@ namespace FondationBB
         public MainWindow()
         {
             InitializeComponent();
+            AfficheAccueil();
+        }
+        private void AfficheAccueil()
+        {
+            UCLogin uc = new UCLogin();
+            Accueil.Content = uc;
         }
     }
 }
