@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FondationBB
 {
     /// <summary>
-    /// Logique d'interaction pour UCFormulaireContrat.xaml
+    /// Logique d'interaction pour UCContratFormulaire.xaml
     /// </summary>
-    public partial class UCFormulaireContrat : Page
+    public partial class UCContratFormulaire : UserControl
     {
-        public UCFormulaireContrat()
+        public UCContratFormulaire()
         {
             InitializeComponent();
         }

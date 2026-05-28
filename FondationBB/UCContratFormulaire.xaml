@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="FondationBB.UCContratFormulaire"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FondationBB"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+    <Grid>
+        <Grid Background="#FFDDE5F1">
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="30,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="215,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="30,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="215,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="30,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="215,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Center" Height="20" Margin="0,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Left" Height="30" Margin="30,36,0,0" TextWrapping="Wrap" Text="Enregistrer un nouveau contrat" VerticalAlignment="Top" Width="277" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="18" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="30,86,0,0" TextWrapping="Wrap" Text="Nom&#xD;&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="214,86,0,0" TextWrapping="Wrap" Text="Prénom&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="30,148,0,0" TextWrapping="Wrap" Text="Téléphone&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="30,208,0,0" TextWrapping="Wrap" Text="Code postal&#xA;" VerticalAlignment="Top" Width="91" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="215,148,0,0" TextWrapping="Wrap" Text="Adresse&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="215,208,0,0" TextWrapping="Wrap" Text="Montant&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="30,268,0,0" TextWrapping="Wrap" Text="Email&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="18" Margin="215,330,0,0" TextWrapping="Wrap" Text="Annuler&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="17" Margin="298,330,0,0" TextWrapping="Wrap" Text="Créer&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" FontSize="14" FontWeight="Bold" Background="#FFA6A7F1"/>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>
