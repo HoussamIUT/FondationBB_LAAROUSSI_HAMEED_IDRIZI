@@ -6,12 +6,8 @@
              xmlns:local="clr-namespace:FondationBB"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#FF21255B">
-        <Canvas Background="#FFDDE5F1" Margin="0,60,0,60">
-            <Image Height="220" Canvas.Left="10" Source="/img/5eeccd85-f09b-4b25-a5f1-b1fbeab1f248 1.png" Stretch="Fill" Canvas.Top="55" Width="296" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        </Canvas>
-        <Image Margin="33,6,0,0" Source="/img/image 11.png" Stretch="Fill" Width="50" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Canvas Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="294" Height="261" Margin="454,88,0,0">
+    <Grid Background="White">
+        <Canvas Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="294" Height="260">
             <Label Content="Connexion à votre espace" Canvas.Top="11" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" Height="68" Width="280" FontSize="24" Foreground="#FF242758" Canvas.Left="15"/>
             <Label Content="Accès réservé aux bénévoles et aux responsables" Canvas.Left="42" Canvas.Top="44" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" FontSize="10" Foreground="#FF242758"/>
             <TextBox Canvas.Left="30" TextWrapping="Wrap" Text="" Canvas.Top="108" Width="219" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="15" TextChanged="TextBox_TextChanged" FontSize="10"/>
