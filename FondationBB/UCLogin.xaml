@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="FondationBB.UCLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FondationBB"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FF21255B">
+        <Canvas Background="#FFDDE5F1" Margin="0,60,0,45">
+            <Image Height="269" Canvas.Left="10" Source="/img/5eeccd85-f09b-4b25-a5f1-b1fbeab1f248 1.png" Stretch="Fill" Canvas.Top="51" Width="356" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Canvas>
+        <Image Margin="23,6,730,400" Source="/img/image 11.png" Stretch="Fill"/>
+        <Canvas Background="White" Margin="460,80,60,69">
+            <Label Content="Connexion à votre espace" Canvas.Top="22" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bodoni MT" Height="68" Width="280" FontSize="24" Foreground="#FF242758" Canvas.Left="10"/>
+            <Label Content="Accès réservé aux bénévoles et aux responsables" Canvas.Left="39" Canvas.Top="56" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bodoni MT" FontSize="10" Foreground="#FF242758"/>
+        </Canvas>
+
+    </Grid>
+</UserControl>
