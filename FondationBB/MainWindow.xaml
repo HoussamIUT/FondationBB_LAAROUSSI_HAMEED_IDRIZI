@@ -7,5 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
-    <ContentControl x:Name="Accueil"/>
+    <ContentControl x:Name="Accueil">
+        <Canvas Margin="0,0,635,0" Background="#FF242758">
+            <Image Height="65" Canvas.Left="51" Source="/img/image 11.png" Stretch="Fill" Canvas.Top="19" Width="63" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Content="ADOPTIONS" Canvas.Left="50" Canvas.Top="171" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF3C3F87"/>
+            <Button Content="DEMANDES" Canvas.Left="48" Canvas.Top="217" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF3C3F87"/>
+            <Button Content="DÉCONNEXION" Canvas.Left="36" Canvas.Top="393" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87"/>
+            <Button Content="CORRESPONDANCES" Canvas.Left="24" Canvas.Top="262" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87"/>
+            <Button Content="STATISTIQUES" Canvas.Left="41" Canvas.Top="306" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87"/>
+            <Button Content="ANIMAUX" Canvas.Left="52" Canvas.Top="125" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF3C3F87"/>
+        </Canvas>
+
+    </ContentControl>
 </Window>
