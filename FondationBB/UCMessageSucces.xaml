@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="FondationBB.UCMessageSucces"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FondationBB"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+    <Grid Background="White">
+        <Image Margin="183,25,183,241" Source="/img/image 19.png" Stretch="Fill"/>
+        <Label Content="Succès !" HorizontalAlignment="Left" Margin="183,0,0,0" VerticalAlignment="Center" FontSize="36"/>
+        <Label Content="Votre fiche animal a bien été enregistrer." HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Terminer" HorizontalAlignment="Right" Margin="0,302,182,0" VerticalAlignment="Top" Height="39" Width="136" Background="#FF242758" Foreground="White"/>
+    </Grid>
+</UserControl>
