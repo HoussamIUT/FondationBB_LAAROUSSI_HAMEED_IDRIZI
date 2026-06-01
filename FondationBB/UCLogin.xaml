@@ -4,14 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FondationBB"
-             mc:Ignorable="d" Height="550" Width="1000">
+             mc:Ignorable="d" Height="700" Width="1100">
     <Grid Background="White">
-        <Label Content="Connexion à votre espace" Canvas.Top="11" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cambria" Height="68" Width="280" FontSize="24" Foreground="#FF242758" Canvas.Left="15" Margin="0,111,0,0"/>
-        <Label Content="Accès réservé aux bénévoles et aux responsables" Canvas.Left="42" Canvas.Top="44" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cambria" FontSize="10" Foreground="#FF242758" Margin="0,145,0,0"/>
-        <TextBox Canvas.Left="30" TextWrapping="Wrap" Text="" Canvas.Top="108" Width="218" FontFamily="Cambria" HorizontalAlignment="Left" VerticalAlignment="Top" Height="15" TextChanged="TextBox_TextChanged" FontSize="10" Margin="369,214,0,0"/>
-        <TextBox Canvas.Left="30" TextWrapping="Wrap" Text="" Canvas.Top="154" Width="219" FontFamily="Cambria" FontSize="10" Height="14" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="368,276,0,0"/>
-        <Button Content="Se connecter" Canvas.Left="30" Canvas.Top="193" Height="22" Width="218" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" BorderBrush="#FFC5D9EA" Background="#FFC5D9EA" Margin="369,325,0,0"/>
-        <Label Content="Entrez votre identifiant" Canvas.Left="24" Canvas.Top="87" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="136" FontSize="9" Margin="364,188,0,0"/>
-        <Label Content="Entrez votre mot de passe" Canvas.Left="25" Canvas.Top="135" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="364,249,0,0"/>
+        <Label Content="Connexion à votre espace" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" Height="64" Width="551" FontSize="36" Foreground="#FF242758" Margin="368,109,0,0"/>
+        <Label Content="Accès réservé aux bénévoles et aux responsables" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" FontSize="16" Foreground="#FF242758" Margin="407,153,0,0" Height="27" Width="334"/>
+        <TextBox TextWrapping="Wrap" Text="" Width="334" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" TextChanged="TextBox_TextChanged" FontSize="10" Margin="0,355,0,0"/>
+        <Button Content="Se connecter" Height="34" Width="334" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" BorderBrush="#FFC5D9EA" Background="#FFC5D9EA" Margin="0,424,0,0"/>
+        <Label Content="Entrez votre identifiant" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="184" FontSize="16" Margin="378,219,0,0"/>
+        <Label Content="Entrez votre mot de passe" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="378,316,0,0" Height="34" Width="204"/>
+        <TextBox TextWrapping="Wrap" Text="" Width="334" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" TextChanged="TextBox_TextChanged" FontSize="10" Margin="0,262,0,0"/>
     </Grid>
 </UserControl>

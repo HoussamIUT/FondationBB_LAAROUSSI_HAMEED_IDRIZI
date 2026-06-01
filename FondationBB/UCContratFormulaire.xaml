@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
     <Grid>
-        <Grid Background="#FFDDE5F1">
+        <Grid Background="White">
             <TextBox HorizontalAlignment="Left" Height="20" Margin="30,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
             <TextBox HorizontalAlignment="Left" Height="20" Margin="215,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
             <TextBox HorizontalAlignment="Left" Height="20" Margin="30,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
