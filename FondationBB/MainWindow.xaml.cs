@@ -18,21 +18,23 @@ namespace FondationBB
     {
         public MainWindow()
         {
+            // Affichage de l'accueil au démarrage
             InitializeComponent();
-            AfficheAccueil();
+            AfficheAccueil();      
         }
         private void AfficheAccueil()
         {
+            // Crée un UC pour login
             UCLogin uc = new UCLogin();
             Accueil.Content = uc;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
         }

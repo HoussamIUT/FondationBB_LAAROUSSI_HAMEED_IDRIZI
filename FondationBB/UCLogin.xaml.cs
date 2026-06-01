@@ -26,6 +26,12 @@ namespace FondationBB
         {
             InitializeComponent();
         }
+        private void AfficherCatalogueAnimaux(object sender, RoutedEventArgs e)
+        {
+            //UCCatalogueAnimaux uc = new UCCatalogueAnimaux();
+            //Accueil.Content = uc;
+            //uc.butAnimaux.Click += AfficherJeu;
+        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

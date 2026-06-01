@@ -8,15 +8,16 @@
         Title="MainWindow" Height="700" Width="1100"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-    <ContentControl x:Name="Accueil">
-        <Canvas Margin="0,0,872,0" Background="#FF242758">
-            <Image Height="80" Canvas.Left="72" Source="/img/image 11.png" Stretch="Fill" Canvas.Top="49" Width="84" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Button x:Name="butAnimaux" Content="ANIMAUX" Canvas.Left="42" Canvas.Top="200" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
-            <Button x:Name="butAdoptions" Content="ADOPTIONS" Canvas.Left="42" Canvas.Top="275" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
-            <Button x:Name="butDemandes" Content="DEMANDES" Canvas.Left="42" Canvas.Top="342" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
-            <Button x:Name="butCorrespondaces" Content="CORRESPONDANCES" Canvas.Left="42" Canvas.Top="412" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
-            <Button x:Name="butStatistiques" Content="STATISTIQUES" Canvas.Left="42" Canvas.Top="479" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
-            <Button x:Name="butDeconnexion" Content="DÉCONNEXION" Canvas.Left="42" Canvas.Top="606" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Height="32" Width="144"/>
-        </Canvas>
-    </ContentControl>
+
+    <Canvas Margin="0,0,872,0" Background="#FF242758">
+        <Image Height="80" Canvas.Left="72" Source="/img/image 11.png" Stretch="Fill" Canvas.Top="35" Width="84" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button x:Name="butAnimaux" Content="ANIMAUX" Canvas.Left="42" Canvas.Top="200" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
+        <Button x:Name="butAdoptions" Content="ADOPTIONS" Canvas.Left="42" Canvas.Top="275" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
+        <Button x:Name="butDemandes" Content="DEMANDES" Canvas.Left="42" Canvas.Top="342" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
+        <Button x:Name="butCorrespondaces" Content="CORRESPONDANCES" Canvas.Left="42" Canvas.Top="412" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
+        <Button x:Name="butStatistiques" Content="STATISTIQUES" Canvas.Left="42" Canvas.Top="479" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
+        <Button x:Name="butDeconnexion" Content="DÉCONNEXION" Canvas.Left="42" Canvas.Top="606" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Height="32" Width="144"/>
+        <ContentControl x:Name="Accueil" Margin="228,0,0,0">
+        </ContentControl>
+    </Canvas>
 </Window>

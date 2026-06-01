@@ -4,14 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FondationBB"
-             mc:Ignorable="d" Height="700" Width="1100">
+             mc:Ignorable="d" Height="700" Width="872">
     <Grid Background="White">
-        <Label Content="Connexion à votre espace" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" Height="64" Width="551" FontSize="36" Foreground="#FF242758" Margin="368,109,0,0"/>
-        <Label Content="Accès réservé aux bénévoles et aux responsables" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" FontSize="16" Foreground="#FF242758" Margin="407,153,0,0" Height="27" Width="334"/>
-        <TextBox TextWrapping="Wrap" Text="" Width="334" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" TextChanged="TextBox_TextChanged" FontSize="10" Margin="0,355,0,0"/>
-        <Button Content="Se connecter" Height="34" Width="334" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" BorderBrush="#FFC5D9EA" Background="#FFC5D9EA" Margin="0,424,0,0"/>
-        <Label Content="Entrez votre identifiant" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="184" FontSize="16" Margin="378,219,0,0"/>
-        <Label Content="Entrez votre mot de passe" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="378,316,0,0" Height="34" Width="204"/>
-        <TextBox TextWrapping="Wrap" Text="" Width="334" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" TextChanged="TextBox_TextChanged" FontSize="10" Margin="0,262,0,0"/>
+        <Label Content="Connexion à votre espace" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" Height="64" Width="552" FontSize="36" Foreground="#FF242758" Margin="253,138,0,0"/>
+        <Label Content="Accès réservé aux bénévoles et aux responsables" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Cambria" FontSize="16" Foreground="#FF242758" Margin="293,182,0,0" Height="28" Width="334"/>
+        <TextBox TextWrapping="Wrap" Text="" Width="334" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" TextChanged="TextBox_TextChanged" FontSize="10" Margin="0,384,0,0"/>
+        <Button x:Name="butConnecter" Content="Se connecter" Height="34" Width="334" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" BorderBrush="#FFC5D9EA" Background="#FFC5D9EA" Margin="0,454,0,0"/>
+        <Label Content="Entrez votre identifiant" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="184" FontSize="16" Margin="263,248,0,0"/>
+        <Label Content="Entrez votre mot de passe" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="263,346,0,0" Height="34" Width="204"/>
+        <TextBox TextWrapping="Wrap" Text="" Width="334" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" TextChanged="TextBox_TextChanged" FontSize="10" Margin="0,292,0,0"/>
     </Grid>
 </UserControl>
