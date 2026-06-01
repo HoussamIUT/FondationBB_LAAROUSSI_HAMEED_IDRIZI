@@ -8,8 +8,7 @@
              d:DesignHeight="550" d:DesignWidth="1000">
     <Grid Background="White">
         <Label Content="Catalogue Des Animaux" HorizontalAlignment="Left" Margin="263,19,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <Label Content="Recherchez, filtrez et gérez les fiches des pensionnaires du refuge.
-" HorizontalAlignment="Left" Margin="265,75,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Recherchez, filtrez et gérez les fiches des pensionnaires du refuge." HorizontalAlignment="Left" Margin="265,75,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Button Content="+ Enregistrer un animal" HorizontalAlignment="Left" Margin="802,35,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16"/>
         <ComboBox HorizontalAlignment="Left" Margin="475,121,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox HorizontalAlignment="Left" Margin="660,121,0,0" VerticalAlignment="Top" Width="120"/>
