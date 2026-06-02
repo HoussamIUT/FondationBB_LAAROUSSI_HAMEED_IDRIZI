@@ -44,5 +44,20 @@ namespace FondationBB
         {
 
         }
+
+        private void butStatistiques_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butCorrespondances_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butDemandes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
