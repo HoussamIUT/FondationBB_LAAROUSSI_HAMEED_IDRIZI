@@ -13,5 +13,11 @@ namespace FondationBB
         private string prenomEmploye;
         private string loginEmploye;
         private string roleEmploye;
+
+        public int IdEmploye { get => idEmploye; set => idEmploye = value; }
+        public string NomEmploye { get => nomEmploye; set => nomEmploye = value; }
+        public string PrenomEmploye { get => prenomEmploye; set => prenomEmploye = value; }
+        public string LoginEmploye { get => loginEmploye; set => loginEmploye = value; }
+        public string RoleEmploye { get => roleEmploye; set => roleEmploye = value; }
     }
 }
