@@ -20,7 +20,7 @@ namespace FondationBB
 
         public static void InitializeConnection(string username, string password)
         {
-            connectionString = $"Host=srv-peda-new;Port=5433;Username={username};Password={password};Database=decrouxl_BasicFit;Options='-c search_path=public'";
+            connectionString = $"Host=srv-peda-new;Port=5433;Username={username};Password={password};Database=laaroush_fondationBB;Options='-c search_path=laaroush'";
 
             connection = new NpgsqlConnection(connectionString);
         }

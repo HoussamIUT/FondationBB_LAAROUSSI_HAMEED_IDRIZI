@@ -27,6 +27,12 @@ namespace FondationBB
             // Crée un UC pour login
             UCLogin uc = new UCLogin();
             Accueil.Content = uc;
+            uc.LoginReussi += Control_LoginReussi;
+        }
+
+        private void Control_LoginReussi(object? sender, EventArgs e)
+        {
+            Accueil.Content = new UCCatalogueAnimaux();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
