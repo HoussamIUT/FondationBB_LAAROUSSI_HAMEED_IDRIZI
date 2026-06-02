@@ -5,32 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FondationBB"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="1000">
+             d:DesignHeight="700" d:DesignWidth="872">
     <Grid Background="White">
-        <Label Content="Demandes" HorizontalAlignment="Left" Margin="263,19,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <Label Content="Liste des demandes en cours d'attente d'un animal idéal." HorizontalAlignment="Left" Margin="263,188,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button Content="+ Enregistrer une demande" HorizontalAlignment="Left" Margin="735,35,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="580,94,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.012,0.638"/>
-        <ComboBox HorizontalAlignment="Left" Margin="720,94,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="269,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22"/>
-        <Label Content="Familles sur liste d'attente" HorizontalAlignment="Left" Margin="263,138,0,0" VerticalAlignment="Top" FontSize="30"/>
-        <Label Content="Famille Lefebvre" HorizontalAlignment="Left" Margin="263,222,0,0" VerticalAlignment="Top" Width="669" Height="87" Background="#FFBFE1FF" FontSize="24"/>
-        <Label Content="Famille Martin" HorizontalAlignment="Left" Margin="263,330,0,0" VerticalAlignment="Top" Width="669" Height="88" Background="#FFBFE1FF" FontSize="24"/>
-        <Label Content="Famille Ruiz" HorizontalAlignment="Left" Margin="263,443,0,0" VerticalAlignment="Top" Width="669" Height="85" Background="#FFBFE1FF" FontSize="24"/>
-        <Label Content="Contact : 06 45 14 78 96" HorizontalAlignment="Left" Margin="265,251,0,0" VerticalAlignment="Top" Foreground="#FF3E3C3C"/>
-        <Label Content="Contact : 07 11 22 33 44" HorizontalAlignment="Left" Margin="265,358,0,0" VerticalAlignment="Top" Foreground="#FF3E3C3C"/>
-        <Label Content="Contact : famille.ruiz@gmail.com" HorizontalAlignment="Left" Margin="265,469,0,0" VerticalAlignment="Top" Foreground="#FF3E3C3C"/>
-        <Label Content="ESPECE : Chien" HorizontalAlignment="Left" Margin="274,275,0,0" VerticalAlignment="Top" Width="99" Height="25" Background="#FF6FABE0"/>
-        <Label Content="RACE : Berger Allemand" HorizontalAlignment="Left" Margin="384,275,0,0" VerticalAlignment="Top" Width="140" Height="25" Background="#FF6FABE0"/>
-        <Label Content="AGE : Adulte" HorizontalAlignment="Left" Margin="534,275,0,0" VerticalAlignment="Top" Width="81" Height="25" Background="#FF6FABE0"/>
-        <Label Content="ESPECE : Chat" HorizontalAlignment="Left" Margin="274,384,0,0" VerticalAlignment="Top" Width="99" Height="25" Background="#FF6FABE0"/>
-        <Label Content="RACE : SIAMOIS" HorizontalAlignment="Left" Margin="384,384,0,0" VerticalAlignment="Top" Width="96" Height="25" Background="#FF6FABE0"/>
-        <Label Content="AGE : Junior" HorizontalAlignment="Left" Margin="494,384,0,0" VerticalAlignment="Top" Width="80" Height="25" Background="#FF6FABE0"/>
-        <Label Content="ESPECE : Chien" HorizontalAlignment="Left" Margin="274,495,0,0" VerticalAlignment="Top" Width="99" Height="25" Background="#FF6FABE0"/>
-        <Label Content="RACE : CHIHUAHUA" HorizontalAlignment="Left" Margin="384,495,0,0" VerticalAlignment="Top" Width="116" Height="25" Background="#FF6FABE0"/>
-        <Label Content="AGE : SENIOR" HorizontalAlignment="Left" Margin="510,495,0,0" VerticalAlignment="Top" Width="83" Height="25" Background="#FF6FABE0"/>
-        
+        <Label Content="Demandes" HorizontalAlignment="Left" Margin="111,29,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="Liste des demandes en cours d'attente d'un animal idéal." HorizontalAlignment="Left" Margin="106,246,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button Content="+ Enregistrer une demande" HorizontalAlignment="Left" Margin="583,45,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" Margin="287,103,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="427,103,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.012,0.638"/>
+        <ComboBox HorizontalAlignment="Left" Margin="567,103,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="117,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22"/>
+        <Label Content="Familles sur liste d'attente" HorizontalAlignment="Left" Margin="111,191,0,0" VerticalAlignment="Top" FontSize="30" RenderTransformOrigin="0.451,0.561"/>
+        <Label Content="Famille Lefebvre" HorizontalAlignment="Left" Margin="106,280,0,0" VerticalAlignment="Top" Width="668" Height="88" Background="#FFBFE1FF" FontSize="24"/>
+        <Label Content="Famille Martin" HorizontalAlignment="Left" Margin="106,388,0,0" VerticalAlignment="Top" Width="668" Height="88" Background="#FFBFE1FF" FontSize="24"/>
+        <Label Content="Famille Ruiz" HorizontalAlignment="Left" Margin="106,502,0,0" VerticalAlignment="Top" Width="668" Height="84" Background="#FFBFE1FF" FontSize="24"/>
+        <Label Content="Contact : 06 45 14 78 96" HorizontalAlignment="Left" Margin="108,310,0,0" VerticalAlignment="Top" Foreground="#FF3E3C3C"/>
+        <Label Content="Contact : 07 11 22 33 44" HorizontalAlignment="Left" Margin="108,416,0,0" VerticalAlignment="Top" Foreground="#FF3E3C3C"/>
+        <Label Content="Contact : famille.ruiz@gmail.com" HorizontalAlignment="Left" Margin="108,528,0,0" VerticalAlignment="Top" Foreground="#FF3E3C3C"/>
+        <Label Content="ESPECE : Chien" HorizontalAlignment="Left" Margin="116,335,0,0" VerticalAlignment="Top" Width="100" Height="24" Background="#FF6FABE0"/>
+        <Label Content="RACE : Berger Allemand" HorizontalAlignment="Left" Margin="226,335,0,0" VerticalAlignment="Top" Width="140" Height="24" Background="#FF6FABE0"/>
+        <Label Content="AGE : Adulte" HorizontalAlignment="Left" Margin="376,335,0,0" VerticalAlignment="Top" Width="82" Height="24" Background="#FF6FABE0"/>
+        <Label Content="ESPECE : Chat" HorizontalAlignment="Left" Margin="116,442,0,0" VerticalAlignment="Top" Width="100" Height="26" Background="#FF6FABE0"/>
+        <Label Content="RACE : SIAMOIS" HorizontalAlignment="Left" Margin="226,442,0,0" VerticalAlignment="Top" Width="96" Height="26" Background="#FF6FABE0"/>
+        <Label Content="AGE : Junior" HorizontalAlignment="Left" Margin="336,442,0,0" VerticalAlignment="Top" Width="80" Height="26" Background="#FF6FABE0"/>
+        <Label Content="ESPECE : Chien" HorizontalAlignment="Left" Margin="116,554,0,0" VerticalAlignment="Top" Width="100" Height="24" Background="#FF6FABE0"/>
+        <Label Content="RACE : CHIHUAHUA" HorizontalAlignment="Left" Margin="226,554,0,0" VerticalAlignment="Top" Width="116" Height="24" Background="#FF6FABE0"/>
+        <Label Content="AGE : SENIOR" HorizontalAlignment="Left" Margin="352,554,0,0" VerticalAlignment="Top" Width="84" Height="24" Background="#FF6FABE0"/>
+        <Button Width="35" Height="35" Background="Transparent"  FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" ToolTip="Supprimer la demande" Margin="718,306,119,358"/>
+        <Button Width="35" Height="35" Background="Transparent"  FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" ToolTip="Supprimer la demande" Margin="718,411,119,254"/>
+        <Button Width="35" Height="35" Background="Transparent"  FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" ToolTip="Supprimer la demande" Margin="718,526,119,138"/>
+        <Button Width="35" Height="35" Background="Transparent"  FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" ToolTip="Modifier la demande" Margin="678,526,159,138"/>
+        <Button Width="35" Height="35" Background="Transparent"  FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" ToolTip="Modifier la demande" Margin="678,306,159,358"/>
+        <Button Width="35" Height="35" Background="Transparent"  FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" ToolTip="Modifier la demande" Margin="678,411,159,254"/>
+
 
     </Grid>
 </UserControl>

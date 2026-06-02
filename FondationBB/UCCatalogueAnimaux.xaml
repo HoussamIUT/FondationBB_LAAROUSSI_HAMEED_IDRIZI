@@ -5,15 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FondationBB"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1100">
+             d:DesignHeight="700" d:DesignWidth="872">
     <Grid Background="White">
-        <Label Content="Catalogue Des Animaux" HorizontalAlignment="Left" Margin="263,19,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <Label Content="Recherchez, filtrez et gérez les fiches des pensionnaires du refuge." HorizontalAlignment="Left" Margin="265,75,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button Content="+ Enregistrer un animal" HorizontalAlignment="Left" Margin="802,35,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Left" Margin="475,121,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="660,121,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="843,121,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="269,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="76*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Catalogue Des Animaux" HorizontalAlignment="Left" Margin="92,27,0,0" VerticalAlignment="Top" FontSize="36" Grid.ColumnSpan="2"/>
+        <Label Content="Recherchez, filtrez et gérez les fiches des pensionnaires du refuge." HorizontalAlignment="Left" Margin="94,83,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2"/>
+        <Button Content="+ Enregistrer un animal" HorizontalAlignment="Left" Margin="367,43,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="40,129,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="225,129,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="408,129,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="98,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22"/>
 
     </Grid>
 </UserControl>
