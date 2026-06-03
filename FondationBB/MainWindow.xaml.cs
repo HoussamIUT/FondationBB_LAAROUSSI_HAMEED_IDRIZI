@@ -28,11 +28,16 @@ namespace FondationBB
             UCLogin uc = new UCLogin();
             Accueil.Content = uc;
             uc.LoginReussi += Control_LoginReussi;
+            
         }
 
         private void Control_LoginReussi(object? sender, EventArgs e)
         {
+            // Le login est fini, les boutons sont visibles
+            this.menuBoutons.Visibility = Visibility.Visible;
+
             Accueil.Content = new UCCatalogueAnimaux();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,6 +63,12 @@ namespace FondationBB
         private void butDemandes_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void butDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+
+            AfficheAccueil();
         }
     }
 }
