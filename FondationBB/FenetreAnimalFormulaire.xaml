@@ -1,13 +1,12 @@
-﻿<UserControl x:Class="FondationBB.UCAnimalFormulaire"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FondationBB"
-             mc:Ignorable="d" 
-             d:DesignHeight="500
-             " d:DesignWidth="600">
-    <Grid Background="White">
+﻿<Window x:Class="FondationBB.FenetreAnimalFormulaire"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FondationBB"
+        mc:Ignorable="d"
+        Title="FenetreAnimalFormulaire" Height="500" Width="600">
+    <Grid>
         <Label Content="Enregistrer un nouvel animal" HorizontalAlignment="Left" Margin="39,15,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Nom *" HorizontalAlignment="Left" Margin="41,57,0,0" VerticalAlignment="Top"/>
         <Label Content="Espèce" HorizontalAlignment="Left" Margin="251,54,0,0" VerticalAlignment="Top"/>
@@ -48,5 +47,6 @@
         <ComboBox HorizontalAlignment="Left" Margin="439,143,0,0" VerticalAlignment="Top" Width="120" Height="18"/>
         <Button Content="X" HorizontalAlignment="Left" Margin="549,14,0,0" VerticalAlignment="Top" FontSize="16" Width="29" BorderBrush="White" Background="White"/>
 
+
     </Grid>
-</UserControl>
+</Window>

@@ -40,28 +40,31 @@ namespace FondationBB
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonAnimaux_Click(object sender, RoutedEventArgs e)
         {
-
+            Accueil.Content = new UCCatalogueAnimaux();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ButtonAdoptions_Click(object sender, RoutedEventArgs e)
         {
-
+            //Accueil.Content = new UCListeDemandes();
         }
 
         private void butStatistiques_Click(object sender, RoutedEventArgs e)
         {
 
+            //Accueil.Content = new UCDashboard();
         }
 
         private void butCorrespondances_Click(object sender, RoutedEventArgs e)
         {
+            //Accueil.Content = new UCMatching();
 
         }
 
         private void butDemandes_Click(object sender, RoutedEventArgs e)
         {
+            Accueil.Content = new UCDemandes();
 
         }
 

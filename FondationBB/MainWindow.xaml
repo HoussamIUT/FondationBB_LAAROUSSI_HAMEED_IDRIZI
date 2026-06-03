@@ -13,8 +13,8 @@
         
     <Image Height="80" Canvas.Left="72" Source="/img/image 11.png" Stretch="Fill" Canvas.Top="35" Width="84" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Canvas x:Name="menuBoutons" Visibility="Collapsed">
-            <Button x:Name="butAnimaux" Content="ANIMAUX" Canvas.Left="42" Canvas.Top="200" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
-        <Button x:Name="butAdoptions" Content="ADOPTIONS" Canvas.Left="42" Canvas.Top="275" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"/>
+            <Button x:Name="butAnimaux" Content="ANIMAUX" Canvas.Left="42" Canvas.Top="200"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="ButtonAnimaux_Click"/>
+            <Button x:Name="butAdoptions" Content="ADOPTIONS" Canvas.Left="42" Canvas.Top="275" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="ButtonAdoptions_Click"/>
         <Button x:Name="butDemandes" Content="DEMANDES" Canvas.Left="42" Canvas.Top="342" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="butDemandes_Click"/>
         <Button x:Name="butCorrespondances" Content="CORRESPONDANCES" Canvas.Left="42" Canvas.Top="412" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="butCorrespondances_Click"/>
         <Button x:Name="butStatistiques" Content="STATISTIQUES" Canvas.Left="42" Canvas.Top="479" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="butStatistiques_Click"/>

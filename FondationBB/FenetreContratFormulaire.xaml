@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="FondationBB.UCContratFormulaire"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FondationBB"
-             mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="400">
+﻿<Window x:Class="FondationBB.FenetreContratFormulaire"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FondationBB"
+        mc:Ignorable="d"
+        Title="FenetreContratFormulaire" Height="400" Width="400">
     <Grid>
         <Grid Background="White">
             <TextBox HorizontalAlignment="Left" Height="20" Margin="30,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
@@ -29,5 +29,6 @@
         <Label Content="Montant" HorizontalAlignment="Left" Margin="213,200,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.439,0.561"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="29,263,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.439,0.561"/>
 
+
     </Grid>
-</UserControl>
+</Window>

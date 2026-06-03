@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FondationBB
 {
     /// <summary>
-    /// Logique d'interaction pour UCAnimalFormulaire.xaml
+    /// Logique d'interaction pour FenetreAnimalFormulaire.xaml
     /// </summary>
-    public partial class UCAnimalFormulaire : UserControl
+    public partial class FenetreAnimalFormulaire : Window
     {
-        public UCAnimalFormulaire()
+        public FenetreAnimalFormulaire()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
