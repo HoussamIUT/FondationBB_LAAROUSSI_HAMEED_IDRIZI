@@ -7,17 +7,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="872">
     <Grid Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="33*"/>
-            <ColumnDefinition Width="76*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Catalogue Des Animaux" HorizontalAlignment="Left" Margin="92,27,0,0" VerticalAlignment="Top" FontSize="36" Grid.ColumnSpan="2"/>
-        <Label Content="Recherchez, filtrez et gérez les fiches des pensionnaires du refuge." HorizontalAlignment="Left" Margin="94,83,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="+ Enregistrer un animal" HorizontalAlignment="Left" Margin="367,43,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16" Grid.Column="1"/>
-        <ComboBox HorizontalAlignment="Left" Margin="40,129,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <ComboBox HorizontalAlignment="Left" Margin="225,129,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <ComboBox HorizontalAlignment="Left" Margin="408,129,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Margin="98,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22"/>
+        <DataGrid x:Name="dgAnimaux" AutoGenerateColumns="False" ItemsSource="{Binding LesAnimaux}" IsReadOnly="True" Margin="98,180,40,40" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdAnimal}" Width="40" />
+                <DataGridTextColumn Header="Nom" Binding="{Binding NomAnimal, ValidatesOnExceptions=true}" Width="120" />
+                <DataGridTextColumn Header="N° I-CAD" Binding="{Binding IcadAnimal}" Width="130" />
+                <DataGridTextColumn Header="Sexe" Binding="{Binding SexeAnimal}" Width="50" />
+                <DataGridTextColumn Header="Date d'Arrivée" Binding="{Binding DateArriveAnimal, StringFormat=\{0:dd/MM/yyyy\}}" Width="100" />
+                <DataGridTextColumn Header="Poids (kg)" Binding="{Binding PoidsAnimal}" Width="80" />
+                <DataGridTextColumn Header="Notes / Annotations" Binding="{Binding AnnotationAnimal}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Catalogue Des Animaux" HorizontalAlignment="Left" Margin="92,27,0,0" VerticalAlignment="Top" FontSize="36" Grid.ColumnSpan="2" Height="58" Width="389"/>
+        <Label Content="Recherchez, filtrez et gérez les fiches des pensionnaires du refuge." HorizontalAlignment="Left" Margin="94,83,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Height="29" Width="416"/>
+        <Button Content="+ Enregistrer un animal" HorizontalAlignment="Left" Margin="658,44,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16" Height="24" Width="169"/>
+        <ComboBox HorizontalAlignment="Left" Margin="530,129,0,0" VerticalAlignment="Top" Width="138" Height="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="336,129,0,0" VerticalAlignment="Top" Width="145" Height="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="707,129,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <TextBox HorizontalAlignment="Left" Margin="98,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="22"/>
 
     </Grid>
 </UserControl>
