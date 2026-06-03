@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FondationBB
 {
     /// <summary>
-    /// Logique d'interaction pour UCContratFormulaire.xaml
+    /// Logique d'interaction pour FenetreMessageSuccès.xaml
     /// </summary>
-    public partial class UCContratFormulaire : UserControl
+    public partial class FenetreMessageSuccès : Window
     {
-        public UCContratFormulaire()
+        public FenetreMessageSuccès()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

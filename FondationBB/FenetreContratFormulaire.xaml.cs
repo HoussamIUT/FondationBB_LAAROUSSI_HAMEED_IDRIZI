@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FondationBB
 {
     /// <summary>
-    /// Logique d'interaction pour UCMessageSucces.xaml
+    /// Logique d'interaction pour FenetreContratFormulaire.xaml
     /// </summary>
-    public partial class UCMessageSucces : UserControl
+    public partial class FenetreContratFormulaire : Window
     {
-        public UCMessageSucces()
+        public FenetreContratFormulaire()
         {
             InitializeComponent();
         }

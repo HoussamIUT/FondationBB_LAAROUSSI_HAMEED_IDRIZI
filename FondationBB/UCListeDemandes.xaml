@@ -15,7 +15,7 @@
 
         <!-- En-tête -->
         <StackPanel Grid.Row="0" Margin="30,20,30,0">
-            <TextBlock Text="Liste d'attente des demandes" FontSize="32" Foreground="#FF242758" FontWeight="SemiBold"/>
+            <TextBlock FontSize="32" Foreground="#FF242758" FontWeight="SemiBold"><Run Language="fr-fr" Text="Historique des adoptions"/></TextBlock>
             <TextBlock Text="Demandes d'adoption en attente, triées par ancienneté."
                        FontSize="14" Foreground="Gray" Margin="0,4,0,0"/>
         </StackPanel>
