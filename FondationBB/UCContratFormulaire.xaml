@@ -15,19 +15,19 @@
             <TextBox HorizontalAlignment="Left" Height="20" Margin="30,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
             <TextBox HorizontalAlignment="Left" Height="20" Margin="215,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged"/>
             <TextBox HorizontalAlignment="Center" Height="20" Margin="0,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" TextChanged="TextBox_TextChanged"/>
-            <TextBox HorizontalAlignment="Left" Height="30" Margin="30,36,0,0" TextWrapping="Wrap" Text="Enregistrer un nouveau contrat" VerticalAlignment="Top" Width="277" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="18" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="24" Margin="30,86,0,0" TextWrapping="Wrap" Text="Nom&#xD;&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="24" Margin="214,86,0,0" TextWrapping="Wrap" Text="Prénom&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="22" Margin="30,148,0,0" TextWrapping="Wrap" Text="Téléphone&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="22" Margin="30,208,0,0" TextWrapping="Wrap" Text="Code postal&#xA;" VerticalAlignment="Top" Width="91" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="22" Margin="215,148,0,0" TextWrapping="Wrap" Text="Adresse&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="22" Margin="215,208,0,0" TextWrapping="Wrap" Text="Montant&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="22" Margin="30,268,0,0" TextWrapping="Wrap" Text="Email&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="24" Margin="215,330,0,0" TextWrapping="Wrap" Text="Annuler&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" Background="{x:Null}" FontSize="14" FontWeight="Bold"/>
-            <TextBox HorizontalAlignment="Left" Height="24" Margin="298,330,0,0" TextWrapping="Wrap" Text="Créer&#xA;" VerticalAlignment="Top" Width="78" TextChanged="TextBox_TextChanged" FontSize="14" FontWeight="Bold" Background="#FFA6A7F1"/>
+            <Label Content="Enregistrer un nouveau contrat" HorizontalAlignment="Left" Margin="30,31,0,0" VerticalAlignment="Top" Width="277" FontSize="16" FontWeight="Bold"/>
+            <Label Content="Nom" HorizontalAlignment="Left" Margin="29,80,0,0" VerticalAlignment="Top" Width="55" FontWeight="Bold" FontSize="14"/>
+            <Label Content="Prenom" HorizontalAlignment="Left" Margin="215,80,0,0" VerticalAlignment="Top" Width="103" FontWeight="Bold" FontSize="14"/>
+            <Button Content="Créer" HorizontalAlignment="Left" Margin="298,330,0,0" VerticalAlignment="Top" Height="24" Width="72" Background="#FF7EB1EA"/>
+            <Button Content="Annuler" HorizontalAlignment="Left" Margin="215,330,0,0" VerticalAlignment="Top" Height="24" Width="72"/>
 
 
         </Grid>
+        <Label Content="Téléphone" HorizontalAlignment="Left" Margin="29,141,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.439,0.561"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" Margin="213,142,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.439,0.561"/>
+        <Label Content="Code postal" HorizontalAlignment="Left" Margin="29,200,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.439,0.561"/>
+        <Label Content="Montant" HorizontalAlignment="Left" Margin="213,200,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.439,0.561"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="29,263,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.439,0.561"/>
 
     </Grid>
 </UserControl>

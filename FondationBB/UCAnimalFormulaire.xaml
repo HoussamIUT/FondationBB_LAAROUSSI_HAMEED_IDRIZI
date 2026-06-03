@@ -9,7 +9,7 @@
              " d:DesignWidth="600">
     <Grid Background="White">
         <Label Content="Enregistrer un nouvel animal" HorizontalAlignment="Left" Margin="39,15,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Nom" HorizontalAlignment="Left" Margin="41,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nom *" HorizontalAlignment="Left" Margin="41,57,0,0" VerticalAlignment="Top"/>
         <Label Content="Espèce" HorizontalAlignment="Left" Margin="251,54,0,0" VerticalAlignment="Top"/>
         <Label Content="Race" HorizontalAlignment="Left" Margin="42,112,0,0" VerticalAlignment="Top"/>
         <Label Content="Sexe" HorizontalAlignment="Left" Margin="248,117,0,0" VerticalAlignment="Top"/>
