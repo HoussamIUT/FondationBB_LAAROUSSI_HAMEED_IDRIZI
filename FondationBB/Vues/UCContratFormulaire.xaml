@@ -1,0 +1,106 @@
+<UserControl x:Class="FondationBB.UCContratFormulaire"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FondationBB"
+             mc:Ignorable="d" d:DesignHeight="744" d:DesignWidth="1040"
+             FontFamily="{StaticResource PoliceApp}">
+    <Grid Background="White" Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Créer un contrat d'adoption" Style="{StaticResource Titre}"
+                   Margin="0,0,0,16"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Étape 1 : animal concerné (récapitulatif) -->
+                <TextBlock Text="1 · Animal" Style="{StaticResource LabelChamp}" Margin="2,0,0,6"/>
+                <Border Style="{StaticResource Carte}" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock x:Name="txtAnimal" Text="—" FontWeight="Medium" FontSize="15"/>
+                        <TextBlock x:Name="txtAnimalMeta" Text="" Style="{StaticResource Secondaire}" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Étape 2 : adoptant (existant ou nouveau) -->
+                <TextBlock Text="2 · Adoptant" Style="{StaticResource LabelChamp}" Margin="2,0,0,6"/>
+                <Border Style="{StaticResource Carte}" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="Choisir un adoptant existant, ou « ➕ Nouvel adoptant » pour en créer un :"
+                                   Style="{StaticResource Secondaire}" Margin="0,0,0,6"/>
+                        <ComboBox x:Name="cbAdoptant" Height="30"
+                                  SelectionChanged="cbAdoptant_SelectionChanged"/>
+
+                        <!-- Champs visibles uniquement pour un NOUVEL adoptant -->
+                        <StackPanel x:Name="panneauNouveau" Margin="0,14,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="24"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="Nom *" Style="{StaticResource LabelChamp}"/>
+                                    <TextBox x:Name="txtNom" Style="{StaticResource Champ}" Margin="0,0,0,12"/>
+                                    <TextBlock Text="Téléphone *" Style="{StaticResource LabelChamp}"/>
+                                    <TextBox x:Name="txtTelephone" Style="{StaticResource Champ}" Margin="0,0,0,12"/>
+                                    <TextBlock Text="Adresse (n° et rue)" Style="{StaticResource LabelChamp}"/>
+                                    <TextBox x:Name="txtRue" Style="{StaticResource Champ}" Margin="0,0,0,12"/>
+                                    <TextBlock Text="Code postal" Style="{StaticResource LabelChamp}"/>
+                                    <TextBox x:Name="txtCp" Style="{StaticResource Champ}"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="Prénom *" Style="{StaticResource LabelChamp}"/>
+                                    <TextBox x:Name="txtPrenom" Style="{StaticResource Champ}" Margin="0,0,0,12"/>
+                                    <TextBlock Text="Email" Style="{StaticResource LabelChamp}"/>
+                                    <TextBox x:Name="txtMail" Style="{StaticResource Champ}" Margin="0,0,0,12"/>
+                                    <TextBlock Text="Ville" Style="{StaticResource LabelChamp}"/>
+                                    <TextBox x:Name="txtVille" Style="{StaticResource Champ}"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Étape 3 : frais (saisie manuelle) + date d'adoption -->
+                <TextBlock Text="3 · Frais et date" Style="{StaticResource LabelChamp}" Margin="2,0,0,6"/>
+                <Border Style="{StaticResource Carte}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="24"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Montant des frais (€) *" Style="{StaticResource LabelChamp}"/>
+                            <TextBox x:Name="txtFrais" Style="{StaticResource Champ}"/>
+                            <TextBlock x:Name="txtFraisIndic" Text="" Style="{StaticResource Secondaire}" Margin="0,4,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="Date de l'adoption *" Style="{StaticResource LabelChamp}"/>
+                            <DatePicker x:Name="dpDateAdoption" Height="34"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2" Margin="0,16,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Annuler" Style="{StaticResource BoutonSecondaire}" Margin="0,0,10,0"
+                        Click="butAnnuler_Click"/>
+                <Button Content="Valider l'adoption" Style="{StaticResource BoutonPrimaire}"
+                        Click="butValider_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

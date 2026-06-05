@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace FondationBB
 {
@@ -19,9 +15,8 @@ namespace FondationBB
             LibelleEspece = libelleEspece;
         }
 
-        // Raccourcis utilisés par le barème de frais (chien vs chat).
+        // Raccourci utilisé par le barème de frais (chat).
         public bool EstChat => LibelleEspece.Trim().Equals("Chat", StringComparison.OrdinalIgnoreCase);
-        public bool EstChien => LibelleEspece.Trim().Equals("Chien", StringComparison.OrdinalIgnoreCase);
 
         public override string ToString() => LibelleEspece;
     }

@@ -1,10 +1,8 @@
-﻿using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Npgsql;
 
 namespace FondationBB
 {
@@ -41,16 +39,16 @@ namespace FondationBB
 
             StringBuilder sql = new StringBuilder(SELECT_ANIMAL);
             sql.Append(" WHERE 1=1");
-            if (!string.IsNullOrWhiteSpace(nom)) sql.Append(" AND lower(a.nom_animal) LIKE @nom");
-            if (idEspece.HasValue) sql.Append(" AND e.id_espece = @idEspece");
-            if (idRace.HasValue) sql.Append(" AND a.id_race = @idRace");
+            if (!string.IsNullOrWhiteSpace(nom))           sql.Append(" AND lower(a.nom_animal) LIKE @nom");
+            if (idEspece.HasValue)                         sql.Append(" AND e.id_espece = @idEspece");
+            if (idRace.HasValue)                           sql.Append(" AND a.id_race = @idRace");
             if (!string.IsNullOrWhiteSpace(libelleStatut)) sql.Append(" AND s.libelle_statut = @statut");
             sql.Append(" ORDER BY a.nom_animal");
 
             NpgsqlCommand cmd = new NpgsqlCommand(sql.ToString());
-            if (!string.IsNullOrWhiteSpace(nom)) cmd.Parameters.AddWithValue("@nom", "%" + nom.Trim().ToLower() + "%");
-            if (idEspece.HasValue) cmd.Parameters.AddWithValue("@idEspece", idEspece.Value);
-            if (idRace.HasValue) cmd.Parameters.AddWithValue("@idRace", idRace.Value);
+            if (!string.IsNullOrWhiteSpace(nom))           cmd.Parameters.AddWithValue("@nom", "%" + nom.Trim().ToLower() + "%");
+            if (idEspece.HasValue)                         cmd.Parameters.AddWithValue("@idEspece", idEspece.Value);
+            if (idRace.HasValue)                           cmd.Parameters.AddWithValue("@idRace", idRace.Value);
             if (!string.IsNullOrWhiteSpace(libelleStatut)) cmd.Parameters.AddWithValue("@statut", libelleStatut);
 
             foreach (DataRow row in DataAcces.ExecuteSelect(cmd).Rows)

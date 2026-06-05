@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Media;
 
 namespace FondationBB
@@ -17,13 +13,13 @@ namespace FondationBB
             {
                 case "disponible": return Pinceau("#EAF3DE");
                 case "réservé":
-                case "reserve": return Pinceau("#FAEEDA");
-                case "en soin": return Pinceau("#E6F1FB");
+                case "reserve":    return Pinceau("#FAEEDA");
+                case "en soin":    return Pinceau("#E6F1FB");
                 case "adopté":
-                case "adopte": return Pinceau("#EFEFEC");
+                case "adopte":     return Pinceau("#EFEFEC");
                 case "décédé":
-                case "decede": return Pinceau("#F0E2E2");
-                default: return Pinceau("#EFEFEC");
+                case "decede":     return Pinceau("#F0E2E2");
+                default:           return Pinceau("#EFEFEC");
             }
         }
 
@@ -33,13 +29,13 @@ namespace FondationBB
             {
                 case "disponible": return Pinceau("#27500A");
                 case "réservé":
-                case "reserve": return Pinceau("#633806");
-                case "en soin": return Pinceau("#0C447C");
+                case "reserve":    return Pinceau("#633806");
+                case "en soin":    return Pinceau("#0C447C");
                 case "adopté":
-                case "adopte": return Pinceau("#555555");
+                case "adopte":     return Pinceau("#555555");
                 case "décédé":
-                case "decede": return Pinceau("#7A2E2E");
-                default: return Pinceau("#555555");
+                case "decede":     return Pinceau("#7A2E2E");
+                default:           return Pinceau("#555555");
             }
         }
 
@@ -49,4 +45,3 @@ namespace FondationBB
         }
     }
 }
-

@@ -1,38 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace FondationBB
 {
+    // Demande d'adoption en attente : une famille décrit l'animal souhaité.
+    // La race est facultative (cardinalité 0,1 dans le MCD).
     public class Demande
     {
-        private int idDemande;
-        private DateTime dateAdoptionDemande;
-        private string trancheAgeDemande;
-        private Personne personneDemande;
-        private Race raceDemande;
+        public int IdDemande { get; set; }
+        public DateTime DateDemande { get; set; }
+        public TrancheAge TrancheAgeDemande { get; set; }
+        public Personne? PersonneDemande { get; set; }
+        public Race? RaceDemande { get; set; }
 
-        public Demande()
+        public Demande() { }
+
+        public Demande(int idDemande, DateTime dateDemande, TrancheAge trancheAge,
+                       Personne? personne, Race? race)
         {
+            IdDemande = idDemande;
+            DateDemande = dateDemande;
+            TrancheAgeDemande = trancheAge;
+            PersonneDemande = personne;
+            RaceDemande = race;
         }
 
-        public Demande(int idDemande, DateTime dateAdoptionDemande, string trancheAgeDemande,
-                       Personne personneDemande, Race raceDemande)
+        // Cœur de l'algorithme de matching : un animal correspond à la demande si :
+        //   - il est disponible à l'adoption,
+        //   - sa race correspond (ou la demande ne précise aucune race),
+        //   - sa tranche d'âge correspond à celle demandée.
+        public bool Correspond(Animal animal)
         {
-            this.idDemande = idDemande;
-            this.dateAdoptionDemande = dateAdoptionDemande;
-            this.trancheAgeDemande = trancheAgeDemande;
-            this.personneDemande = personneDemande;
-            this.raceDemande = raceDemande;
-        }
+            if (!animal.EstDisponible()) return false;
 
-        public int IdDemande { get => idDemande; set => idDemande = value; }
-        public DateTime DateAdoptionDemande { get => dateAdoptionDemande; set => dateAdoptionDemande = value; }
-        public string TrancheAgeDemande { get => trancheAgeDemande; set => trancheAgeDemande = value; }
-        public Personne PersonneDemande { get => personneDemande; set => personneDemande = value; }
-        public Race RaceDemande { get => raceDemande; set => raceDemande = value; }
+            if (RaceDemande != null &&
+                (animal.Race == null || animal.Race.IdRace != RaceDemande.IdRace))
+                return false;
+
+            return animal.GetTrancheAge() == TrancheAgeDemande;
+        }
     }
 }

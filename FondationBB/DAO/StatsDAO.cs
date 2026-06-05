@@ -1,134 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using Npgsql;
 
 namespace FondationBB
 {
-    /// <summary>
-    /// Accès aux données agrégées pour le tableau de bord statistiques.
-    /// Auteur : Idrizi.
-    /// </summary>
+    // Indicateurs du tableau de bord (réservé au responsable).
     public class StatsDAO
     {
-        /// <summary>Nombre total d'animaux présents au refuge (non adoptés, non décédés).</summary>
-        public static int CompterAnimauxPresents()
+        // Animaux encore présents au refuge (ni adoptés, ni décédés).
+        public int CompterAnimauxPresents()
         {
-            string sql = @"
-                SELECT COUNT(*)
-                FROM animal a
+            return LireEntier(new NpgsqlCommand(@"
+                SELECT COUNT(*) FROM animal a
                 JOIN statut s ON s.id_statut = a.id_statut
-                WHERE s.libelle_statut NOT IN ('Adopté', 'Décédé')";
-            NpgsqlCommand cmd = new NpgsqlCommand(sql);
-            string res = DataAcces.ExecuteSelectOneValue(cmd);
-            return string.IsNullOrEmpty(res) ? 0 : Convert.ToInt32(res);
+                WHERE s.libelle_statut NOT IN ('Adopté', 'Décédé')"));
         }
 
-        /// <summary>Nombre d'animaux disponibles à l'adoption.</summary>
-        public static int CompterAnimauxDisponibles()
+        public int CompterAnimauxDisponibles()
         {
-            string sql = @"
-                SELECT COUNT(*)
-                FROM animal a
+            return LireEntier(new NpgsqlCommand(@"
+                SELECT COUNT(*) FROM animal a
                 JOIN statut s ON s.id_statut = a.id_statut
-                WHERE s.libelle_statut = 'Disponible'";
-            NpgsqlCommand cmd = new NpgsqlCommand(sql);
-            string res = DataAcces.ExecuteSelectOneValue(cmd);
-            return string.IsNullOrEmpty(res) ? 0 : Convert.ToInt32(res);
+                WHERE s.libelle_statut = 'Disponible'"));
         }
 
-        /// <summary>Nombre total d'adoptions enregistrées.</summary>
-        public static int CompterAdoptions()
+        public int CompterAdoptions()
         {
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM adoption");
-            string res = DataAcces.ExecuteSelectOneValue(cmd);
-            return string.IsNullOrEmpty(res) ? 0 : Convert.ToInt32(res);
+            return LireEntier(new NpgsqlCommand("SELECT COUNT(*) FROM adoption"));
         }
 
-        /// <summary>Nombre de demandes en attente.</summary>
-        public static int CompterDemandesEnAttente()
+        public int CompterDemandesEnAttente()
         {
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM demande");
-            string res = DataAcces.ExecuteSelectOneValue(cmd);
-            return string.IsNullOrEmpty(res) ? 0 : Convert.ToInt32(res);
+            return LireEntier(new NpgsqlCommand("SELECT COUNT(*) FROM demande"));
         }
 
-        /// <summary>
-        /// Répartition des animaux présents par espèce.
-        /// Retourne une liste de couples (libellé espèce, nombre).
-        /// </summary>
-        public static List<KeyValuePair<string, int>> RepartitionParEspece()
+        // Adoptions enregistrées pendant le mois civil en cours.
+        public int CompterAdoptionsCeMois()
         {
-            var liste = new List<KeyValuePair<string, int>>();
-            string sql = @"
-                SELECT e.libelle_espece, COUNT(*) AS nb
-                FROM animal a
-                JOIN race r   ON r.id_race = a.id_race
-                JOIN espece e ON e.id_espece = r.id_espece
-                JOIN statut s ON s.id_statut = a.id_statut
-                WHERE s.libelle_statut NOT IN ('Adopté', 'Décédé')
-                GROUP BY e.libelle_espece
-                ORDER BY nb DESC";
-            NpgsqlCommand cmd = new NpgsqlCommand(sql);
-            DataTable dt = DataAcces.ExecuteSelect(cmd);
-            foreach (DataRow row in dt.Rows)
-            {
-                liste.Add(new KeyValuePair<string, int>(
-                    row["libelle_espece"].ToString(),
-                    Convert.ToInt32(row["nb"])));
-            }
-            return liste;
+            return LireEntier(new NpgsqlCommand(@"
+                SELECT COUNT(*) FROM adoption
+                WHERE EXTRACT(MONTH FROM date_adoption) = EXTRACT(MONTH FROM CURRENT_DATE)
+                  AND EXTRACT(YEAR  FROM date_adoption) = EXTRACT(YEAR  FROM CURRENT_DATE)"));
         }
 
-        /// <summary>
-        /// Répartition des animaux présents par statut (pour graphique en barres).
-        /// </summary>
-        public static List<KeyValuePair<string, int>> RepartitionParStatut()
+        // Total des frais d'adoption récoltés pendant le mois civil en cours.
+        public decimal FraisRecoltesCeMois()
         {
-            var liste = new List<KeyValuePair<string, int>>();
-            string sql = @"
-                SELECT s.libelle_statut, COUNT(*) AS nb
-                FROM animal a
-                JOIN statut s ON s.id_statut = a.id_statut
-                GROUP BY s.libelle_statut
-                ORDER BY nb DESC";
-            NpgsqlCommand cmd = new NpgsqlCommand(sql);
-            DataTable dt = DataAcces.ExecuteSelect(cmd);
-            foreach (DataRow row in dt.Rows)
-            {
-                liste.Add(new KeyValuePair<string, int>(
-                    row["libelle_statut"].ToString(),
-                    Convert.ToInt32(row["nb"])));
-            }
-            return liste;
+            return LireDecimal(new NpgsqlCommand(@"
+                SELECT COALESCE(SUM(frais_adoption), 0) FROM adoption
+                WHERE EXTRACT(MONTH FROM date_adoption) = EXTRACT(MONTH FROM CURRENT_DATE)
+                  AND EXTRACT(YEAR  FROM date_adoption) = EXTRACT(YEAR  FROM CURRENT_DATE)"));
         }
 
-        /// <summary>
-        /// Adoptions par mois sur l'année en cours (pour graphique en barres).
-        /// Retourne 12 valeurs indexées de janvier (0) à décembre (11).
-        /// </summary>
-        public static int[] AdoptionsParMois(int annee)
+        private int LireEntier(NpgsqlCommand cmd)
         {
-            int[] mois = new int[12];
-            string sql = @"
-                SELECT EXTRACT(MONTH FROM date_adoption) AS m, COUNT(*) AS nb
-                FROM adoption
-                WHERE EXTRACT(YEAR FROM date_adoption) = @annee
-                GROUP BY m
-                ORDER BY m";
-            NpgsqlCommand cmd = new NpgsqlCommand(sql);
-            cmd.Parameters.AddWithValue("@annee", annee);
-            DataTable dt = DataAcces.ExecuteSelect(cmd);
-            foreach (DataRow row in dt.Rows)
-            {
-                int m = Convert.ToInt32(row["m"]);
-                if (m >= 1 && m <= 12)
-                    mois[m - 1] = Convert.ToInt32(row["nb"]);
-            }
-            return mois;
+            object? res = DataAcces.ExecuteScalar(cmd);
+            return res == null || res == DBNull.Value ? 0 : Convert.ToInt32(res);
+        }
+
+        private decimal LireDecimal(NpgsqlCommand cmd)
+        {
+            object? res = DataAcces.ExecuteScalar(cmd);
+            return res == null || res == DBNull.Value ? 0m : Convert.ToDecimal(res);
         }
     }
 }

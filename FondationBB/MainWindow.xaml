@@ -1,26 +1,111 @@
-﻿<Window x:Class="FondationBB.MainWindow"
+<Window x:Class="FondationBB.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FondationBB"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1100"
+        Title="FondationBB" Height="800" Width="1280"
+        MinHeight="640" MinWidth="1040"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        FontFamily="{StaticResource PoliceApp}" Background="White">
 
-    <Canvas Margin="0,0,872,0" Background="#FF242758">
-        
-    <Image Height="80" Canvas.Left="72" Source="/img/image 11.png" Stretch="Fill" Canvas.Top="35" Width="84" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Canvas x:Name="menuBoutons" Visibility="Collapsed">
-            <Button x:Name="butAnimaux" Content="ANIMAUX" Canvas.Left="42" Canvas.Top="200"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="ButtonAnimaux_Click"/>
-            <Button x:Name="butAdoptions" Content="ADOPTIONS" Canvas.Left="42" Canvas.Top="275" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="ButtonAdoptions_Click"/>
-        <Button x:Name="butDemandes" Content="DEMANDES" Canvas.Left="42" Canvas.Top="342" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="butDemandes_Click"/>
-        <Button x:Name="butCorrespondances" Content="CORRESPONDANCES" Canvas.Left="42" Canvas.Top="412" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="butCorrespondances_Click"/>
-        <Button x:Name="butStatistiques" Content="STATISTIQUES" Canvas.Left="42" Canvas.Top="479" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32" Click="butStatistiques_Click"/>
-            <Button x:Name="butDeconnexion" Content="DÉCONNEXION" Canvas.Left="42" Canvas.Top="606"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF3C3F87" Width="144" Height="32"  Click="butDeconnexion_Click"/>
-    </Canvas>
-    <ContentControl x:Name="Accueil" Margin="228,0,0,0">
-        </ContentControl>
-    </Canvas>
+    <Window.Resources>
+        <!-- Élément de navigation de la barre latérale.
+             Le fond/texte sont pilotés depuis le code (état actif = primaryLight). -->
+        <Style x:Key="NavItem" TargetType="Button">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Margin" Value="10,2"/>
+            <Setter Property="Padding" Value="14,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="{StaticResource BrushTextSec}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Left"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- ===================== COUCHE APPLICATION ===================== -->
+        <Grid x:Name="RacineApp" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Barre latérale -->
+            <Border Grid.Column="0" Background="{StaticResource BrushPanel}"
+                    BorderBrush="{StaticResource BrushBorder}" BorderThickness="0,0,1,0">
+                <DockPanel>
+                    <!-- En-tête logo -->
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="18,20,10,18">
+                        <Image Height="40" Source="/img/image 11.png" Stretch="Fill" Width="40"/>
+                        <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="Fondation BB" FontWeight="Medium" FontSize="14"/>
+                            <TextBlock Text="Gestion adoptions" Style="{StaticResource Secondaire}"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+
+                    <!-- Pied : utilisateur connecté + déconnexion -->
+                    <StackPanel DockPanel.Dock="Bottom" Margin="10,10,10,16">
+                        <Border Background="White" CornerRadius="8" Padding="12,8" Margin="0,0,0,8"
+                                BorderBrush="{StaticResource BrushBorder}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock x:Name="txtUtilisateur" Text="—" FontWeight="Medium" FontSize="13"/>
+                                <TextBlock x:Name="txtRole" Text="—" Style="{StaticResource Secondaire}"/>
+                            </StackPanel>
+                        </Border>
+                        <Button Content="Se déconnecter" Style="{StaticResource BoutonSecondaire}"
+                                Click="Deconnexion_Click"/>
+                    </StackPanel>
+
+                    <!-- Items de navigation -->
+                    <StackPanel DockPanel.Dock="Top" Margin="0,6,0,0">
+                        <Button x:Name="navAnimaux" Style="{StaticResource NavItem}"
+                                Content="Animaux" Click="navAnimaux_Click"/>
+                        <Button x:Name="navAdoptions" Style="{StaticResource NavItem}"
+                                Content="Adoptions" Click="navAdoptions_Click"/>
+                        <Button x:Name="navDemandes" Style="{StaticResource NavItem}"
+                                Content="Demandes" Click="navDemandes_Click"/>
+                        <Button x:Name="navCorrespondances" Style="{StaticResource NavItem}"
+                                Content="Correspondances" Click="navCorrespondances_Click"/>
+                        <Button x:Name="navStatistiques" Style="{StaticResource NavItem}"
+                                Content="Statistiques" Click="navStatistiques_Click"/>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+
+            <!-- Zone principale -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Barre d'application -->
+                <Border Grid.Row="0" Background="White"
+                        BorderBrush="{StaticResource BrushBorder}" BorderThickness="0,0,0,1">
+                </Border>
+
+                <!-- Contenu de l'écran courant -->
+                <ContentControl x:Name="Zone" Grid.Row="1"/>
+            </Grid>
+        </Grid>
+
+        <!-- ===================== COUCHE CONNEXION ===================== -->
+        <ContentControl x:Name="ZoneLogin"/>
+    </Grid>
 </Window>

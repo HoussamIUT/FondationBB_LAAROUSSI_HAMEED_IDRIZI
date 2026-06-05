@@ -1,77 +1,99 @@
-﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FondationBB
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    // Fenêtre principale : héberge l'écran de connexion puis le shell (barre latérale + contenu).
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
-            // Affichage de l'accueil au démarrage
             InitializeComponent();
-            AfficheAccueil();      
-        }
-        private void AfficheAccueil()
-        {
-            // Crée un UC pour login
-            UCLogin uc = new UCLogin();
-            Accueil.Content = uc;
-            uc.LoginReussi += Control_LoginReussi;
-            
+            // La zone de contenu sert aussi de cible aux sous-écrans (fiche, formulaires).
+            Navigateur.Zone = Zone;
+            AfficherLogin();
         }
 
-        private void Control_LoginReussi(object? sender, EventArgs e)
+        // Affiche l'écran de connexion plein cadre et masque le shell.
+        private void AfficherLogin()
         {
-            // Le login est fini, les boutons sont visibles
-            this.menuBoutons.Visibility = Visibility.Visible;
-
-            Accueil.Content = new UCCatalogueAnimaux();
-            
+            UCLogin login = new UCLogin();
+            login.OnConnecte = OnConnecte;   // callback déclenché après authentification réussie
+            ZoneLogin.Content = login;
+            ZoneLogin.Visibility = Visibility.Visible;
+            RacineApp.Visibility = Visibility.Collapsed;
         }
 
-        private void ButtonAnimaux_Click(object sender, RoutedEventArgs e)
+        // Appelé par UCLogin une fois l'employé authentifié et stocké dans Session.
+        private void OnConnecte()
         {
-            Accueil.Content = new UCCatalogueAnimaux();
+            ZoneLogin.Visibility = Visibility.Collapsed;
+            ZoneLogin.Content = null;
+            RacineApp.Visibility = Visibility.Visible;
+
+            // En-tête utilisateur
+            Employe? e = Session.EmployeConnecte;
+            txtUtilisateur.Text = e?.NomComplet ?? "";
+            txtRole.Text = Session.EstResponsable ? "Responsable" : "Bénévole";
+
+            // Gestion des droits : les écrans responsables sont masqués pour un bénévole.
+            Visibility droitResp = Session.EstResponsable ? Visibility.Visible : Visibility.Collapsed;
+            navCorrespondances.Visibility = droitResp;
+            navStatistiques.Visibility = droitResp;
+
+            // Écran d'accueil par défaut
+            Naviguer(navAnimaux, "Animaux", new UCCatalogueAnimaux());
         }
 
-        private void ButtonAdoptions_Click(object sender, RoutedEventArgs e)
+        // Place un écran dans la zone de contenu et met l'item de nav correspondant en actif.
+        private void Naviguer(Button itemActif, string titre, UserControl ecran)
         {
-            //Accueil.Content = new UCListeDemandes();
+            Zone.Content = ecran;
+            ActiverNav(itemActif);
         }
 
-        private void butStatistiques_Click(object sender, RoutedEventArgs e)
+        // Réinitialise le visuel de tous les items puis surligne l'item actif (état primaryLight).
+        private void ActiverNav(Button actif)
         {
-
-            //Accueil.Content = new UCDashboard();
+            Button[] items = { navAnimaux, navAdoptions, navDemandes, navCorrespondances, navStatistiques };
+            foreach (Button b in items)
+            {
+                b.Background = Brushes.Transparent;
+                b.Foreground = (Brush)FindResource("BrushTextSec");
+                b.FontWeight = FontWeights.Normal;
+            }
+            actif.Background = (Brush)FindResource("BrushPrimaryLight");
+            actif.Foreground = (Brush)FindResource("BrushPrimary");
+            actif.FontWeight = FontWeights.Medium;
         }
 
-        private void butCorrespondances_Click(object sender, RoutedEventArgs e)
-        {
-            //Accueil.Content = new UCMatching();
+        private void navAnimaux_Click(object sender, RoutedEventArgs e)
+            => Naviguer(navAnimaux, "Animaux", new UCCatalogueAnimaux());
 
+        private void navAdoptions_Click(object sender, RoutedEventArgs e)
+            => Naviguer(navAdoptions, "Historique des adoptions", new UCHistoriqueAdoptions());
+
+        private void navDemandes_Click(object sender, RoutedEventArgs e)
+            => Naviguer(navDemandes, "Nouvelle demande d'adoption", new UCDemandes());
+
+        // Les deux écrans suivants sont réservés au responsable (double sécurité avec le masquage).
+        private void navCorrespondances_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Session.EstResponsable) return;
+            Naviguer(navCorrespondances, "Correspondances demandes / animaux", new UCCorrespondances());
         }
 
-        private void butDemandes_Click(object sender, RoutedEventArgs e)
+        private void navStatistiques_Click(object sender, RoutedEventArgs e)
         {
-            Accueil.Content = new UCDemandes();
-
+            if (!Session.EstResponsable) return;
+            Naviguer(navStatistiques, "Tableau de bord", new UCDashboard());
         }
 
-        private void butDeconnexion_Click(object sender, RoutedEventArgs e)
+        private void Deconnexion_Click(object sender, RoutedEventArgs e)
         {
-
-            AfficheAccueil();
+            Session.Deconnecter();
+            AfficherLogin();
         }
     }
 }

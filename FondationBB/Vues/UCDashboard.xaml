@@ -1,78 +1,79 @@
-﻿<UserControl x:Class="FondationBB.UCDashboard"
+<UserControl x:Class="FondationBB.UCDashboard"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:FondationBB"
-             mc:Ignorable="d"
-             d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+             mc:Ignorable="d" d:DesignHeight="744" d:DesignWidth="1040"
+             FontFamily="{StaticResource PoliceApp}">
+    <ScrollViewer Background="White" VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <!-- En-tête + actualisation -->
+            <Grid Margin="0,0,0,16">
+                <TextBlock Text="Tableau de bord" Style="{StaticResource Titre}" VerticalAlignment="Center"/>
+                <Button Content="Actualiser" Style="{StaticResource BoutonSecondaire}"
+                        HorizontalAlignment="Right" Click="butActualiser_Click"/>
+            </Grid>
 
-        <!-- En-tête -->
-        <StackPanel Grid.Row="0" Margin="30,20,30,10">
-            <TextBlock Text="Tableau de bord" FontSize="32" Foreground="#FF242758" FontWeight="SemiBold"/>
-            <TextBlock Text="Vue d'ensemble de l'activité du refuge."
-                       FontSize="14" Foreground="Gray" Margin="0,4,0,0"/>
+            <!-- Cartes KPI -->
+            <UniformGrid Columns="5" Margin="0,0,0,20">
+                <Border Style="{StaticResource Carte}" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Animaux présents" Style="{StaticResource Secondaire}"/>
+                        <TextBlock x:Name="kpiPresents" Text="—" FontSize="30" FontWeight="Bold"
+                                   Foreground="{StaticResource BrushPrimary}"/>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource Carte}" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Disponibles" Style="{StaticResource Secondaire}"/>
+                        <TextBlock x:Name="kpiDispo" Text="—" FontSize="30" FontWeight="Bold"
+                                   Foreground="#27500A"/>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource Carte}" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Adoptions (total)" Style="{StaticResource Secondaire}"/>
+                        <TextBlock x:Name="kpiAdoptions" Text="—" FontSize="30" FontWeight="Bold"
+                                   Foreground="{StaticResource BrushPrimaryDark}"/>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource Carte}" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Demandes en attente" Style="{StaticResource Secondaire}"/>
+                        <TextBlock x:Name="kpiDemandes" Text="—" FontSize="30" FontWeight="Bold"
+                                   Foreground="#633806"/>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource Carte}">
+                    <StackPanel>
+                        <TextBlock Text="Adoptés ce mois-ci" Style="{StaticResource Secondaire}"/>
+                        <TextBlock x:Name="kpiAdoptesMois" Text="—" FontSize="30" FontWeight="Bold"
+                                   Foreground="#27500A"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <!-- Frais d'adoption récoltés ce mois-ci -->
+            <Border Background="#242758" CornerRadius="10" Padding="22" HorizontalAlignment="Left"
+                    MinWidth="380">
+                <StackPanel>
+                    <TextBlock Text="Frais d'adoption récoltés" Foreground="White"
+                               FontSize="16" FontWeight="SemiBold"/>
+                    <TextBlock x:Name="txtMoisCourant" Text="Mois en cours" Foreground="#9AA0C7"
+                               FontSize="12" Margin="0,2,0,14"/>
+                    <TextBlock x:Name="txtFraisMois" Text="0 €" Foreground="#3FE08A"
+                               FontSize="40" FontWeight="Bold"/>
+                    <Border BorderBrush="#3A3E6B" BorderThickness="0,1,0,0" Margin="0,16,0,0" Padding="0,12,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="8" Height="8" Fill="#3FE08A" VerticalAlignment="Center"/>
+                            <TextBlock Text="Calculé en temps réel sur les contrats signés"
+                                       Foreground="#C5C9E6" FontSize="12" Margin="8,0,0,0"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
         </StackPanel>
-
-        <!-- Cartes KPI -->
-        <UniformGrid Grid.Row="1" Rows="1" Columns="4" Margin="30,10,30,10">
-            <Border Background="#FFF0F2FA" CornerRadius="8" Margin="0,0,8,0" Padding="16">
-                <StackPanel>
-                    <TextBlock Text="Animaux présents" Foreground="Gray" FontSize="13"/>
-                    <TextBlock x:Name="kpiPresents" Text="-" Foreground="#FF242758" FontSize="30" FontWeight="Bold"/>
-                </StackPanel>
-            </Border>
-            <Border Background="#FFF0F2FA" CornerRadius="8" Margin="4,0,4,0" Padding="16">
-                <StackPanel>
-                    <TextBlock Text="Disponibles" Foreground="Gray" FontSize="13"/>
-                    <TextBlock x:Name="kpiDispo" Text="-" Foreground="#FF242758" FontSize="30" FontWeight="Bold"/>
-                </StackPanel>
-            </Border>
-            <Border Background="#FFF0F2FA" CornerRadius="8" Margin="4,0,4,0" Padding="16">
-                <StackPanel>
-                    <TextBlock Text="Adoptions" Foreground="Gray" FontSize="13"/>
-                    <TextBlock x:Name="kpiAdoptions" Text="-" Foreground="#FF242758" FontSize="30" FontWeight="Bold"/>
-                </StackPanel>
-            </Border>
-            <Border Background="#FFF0F2FA" CornerRadius="8" Margin="8,0,0,0" Padding="16">
-                <StackPanel>
-                    <TextBlock Text="Demandes en attente" Foreground="Gray" FontSize="13"/>
-                    <TextBlock x:Name="kpiDemandes" Text="-" Foreground="#FF242758" FontSize="30" FontWeight="Bold"/>
-                </StackPanel>
-            </Border>
-        </UniformGrid>
-
-        <!-- Graphiques -->
-        <Grid Grid.Row="2" Margin="30,10,30,20">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="16"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <!-- Bar chart : adoptions par mois -->
-            <Border Grid.Column="0" BorderBrush="#FFE0E0E0" BorderThickness="1" CornerRadius="8" Padding="16">
-                <StackPanel>
-                    <TextBlock Text="Adoptions par mois (année en cours)" FontWeight="SemiBold"
-                               Foreground="#FF242758" Margin="0,0,0,12"/>
-                    <Grid x:Name="zoneBarres" Height="220"/>
-                </StackPanel>
-            </Border>
-
-            <!-- Répartition par statut -->
-            <Border Grid.Column="2" BorderBrush="#FFE0E0E0" BorderThickness="1" CornerRadius="8" Padding="16">
-                <StackPanel>
-                    <TextBlock Text="Répartition par statut" FontWeight="SemiBold"
-                               Foreground="#FF242758" Margin="0,0,0,12"/>
-                    <StackPanel x:Name="zoneStatuts"/>
-                </StackPanel>
-            </Border>
-        </Grid>
-    </Grid>
+    </ScrollViewer>
 </UserControl>

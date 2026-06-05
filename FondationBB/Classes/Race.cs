@@ -1,35 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace FondationBB
 {
     public class Race
     {
-        private int idRace;
-        private string libelleRace;
-        private string tailleRace;
-        private Espece especeRace;
+        public int IdRace { get; set; }
+        public string LibelleRace { get; set; } = "";
+        public TailleRace Taille { get; set; }
+        public Espece? Espece { get; set; }
 
-        public Race()
+        public Race() { }
+
+        public Race(int idRace, string libelleRace, TailleRace taille, Espece? espece)
         {
+            IdRace = idRace;
+            LibelleRace = libelleRace;
+            Taille = taille;
+            Espece = espece;
         }
 
-        public Race(int idRace, string libelleRace, string tailleRace, Espece especeRace)
-        {
-            this.idRace = idRace;
-            this.libelleRace = libelleRace;
-            this.tailleRace = tailleRace;
-            this.especeRace = especeRace;
-        }
-
-        public int IdRace { get => idRace; set => idRace = value; }
-        public string LibelleRace { get => libelleRace; set => libelleRace = value; }
-        public string TailleRace { get => tailleRace; set => tailleRace = value; }
-        public Espece EspeceRace { get => especeRace; set => especeRace = value; }
-
-        public override string ToString() => libelleRace;
+        public override string ToString() => LibelleRace;
     }
 }

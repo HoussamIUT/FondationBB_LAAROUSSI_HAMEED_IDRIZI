@@ -1,29 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace FondationBB
 {
+    // Statut courant de l'animal : En soin, Disponible, Réservé, Adopté, Décédé.
+    // Classe (et non enum) car la liste est éditable côté base de données.
     public class Statut
     {
-        private int idStatut;
-        private string libelleStatut;
+        public int IdStatut { get; set; }
+        public string LibelleStatut { get; set; } = "";
 
-        public Statut()
-        {
-        }
+        public Statut() { }
 
         public Statut(int idStatut, string libelleStatut)
         {
-            this.idStatut = idStatut;
-            this.libelleStatut = libelleStatut;
+            IdStatut = idStatut;
+            LibelleStatut = libelleStatut;
         }
 
-        public int IdStatut { get => idStatut; set => idStatut = value; }
-        public string LibelleStatut { get => libelleStatut; set => libelleStatut = value; }
-
-        public override string ToString() => libelleStatut;
+        public override string ToString() => LibelleStatut;
     }
 }
