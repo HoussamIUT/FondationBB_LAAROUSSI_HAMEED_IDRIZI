@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace FondationBB
 {
+    // Trait de caractère / comportement (liste figée côté sujet mais stockée en BD).
     public class Comportement
     {
-        private int idComportement;
-        private string libelleComportement;
+        public int IdComportement { get; set; }
+        public string LibelleComportement { get; set; } = "";
+
+        public Comportement() { }
+
+        public Comportement(int idComportement, string libelleComportement)
+        {
+            IdComportement = idComportement;
+            LibelleComportement = libelleComportement;
+        }
+
+        public override string ToString() => LibelleComportement;
     }
 }
+

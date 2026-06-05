@@ -8,22 +8,21 @@ namespace FondationBB
 {
     public class Espece
     {
-        private int idEspece;
-        private string libelleEspece;
+        public int IdEspece { get; set; }
+        public string LibelleEspece { get; set; } = "";
 
-        public Espece()
-        {
-        }
+        public Espece() { }
 
         public Espece(int idEspece, string libelleEspece)
         {
-            this.idEspece = idEspece;
-            this.libelleEspece = libelleEspece;
+            IdEspece = idEspece;
+            LibelleEspece = libelleEspece;
         }
 
-        public int IdEspece { get => idEspece; set => idEspece = value; }
-        public string LibelleEspece { get => libelleEspece; set => libelleEspece = value; }
+        // Raccourcis utilisés par le barème de frais (chien vs chat).
+        public bool EstChat => LibelleEspece.Trim().Equals("Chat", StringComparison.OrdinalIgnoreCase);
+        public bool EstChien => LibelleEspece.Trim().Equals("Chien", StringComparison.OrdinalIgnoreCase);
 
-        public override string ToString() => libelleEspece;
+        public override string ToString() => LibelleEspece;
     }
 }
