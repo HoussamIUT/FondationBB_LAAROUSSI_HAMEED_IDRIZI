@@ -9,6 +9,7 @@
         MinHeight="640" MinWidth="1040"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
+        Icon="img/image_11.png"
         FontFamily="{StaticResource PoliceApp}" Background="White">
 
     <Window.Resources>

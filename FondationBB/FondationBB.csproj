@@ -4,13 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>img\image_11.ico</ApplicationIcon>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="img\5eeccd85-f09b-4b25-a5f1-b1fbeab1f248 1.png" />
-    <None Remove="img\image 11.png" />
     <None Remove="img\image 19.png" />
   </ItemGroup>
 
@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <Resource Include="img\5eeccd85-f09b-4b25-a5f1-b1fbeab1f248 1.png" />
-    <Resource Include="img\image 11.png" />
+    <Resource Include="img\image_11.png" />
     <Resource Include="img\image 19.png" />
   </ItemGroup>
 
